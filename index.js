@@ -2,11 +2,13 @@ const mongoose = require('mongoose')
 const express = require('express')
 require('dotenv').config()
 const ImageRoutes = require('./Routes/imageRoutes')
+const UserRoutes = require('./Routes/authRoutes')
 
 const app = express()
 
 app.use(express.json())
 app.use(ImageRoutes)
+app.use(UserRoutes)
 
 const DB = process.env.DB
 const Port = process.env.Port || 3000
